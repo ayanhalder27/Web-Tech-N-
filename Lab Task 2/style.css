@@ -1,0 +1,30 @@
+header{
+    font-weight: bolder;
+    font-size: 40px;
+    ;
+    text-align: center;
+}
+img{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+#image{
+    text-align: center;
+}
+#constant{
+    font-size: 20px;
+    font-weight: bold;
+}
+div{
+    background-color:lightyellow;
+    padding: 10px;
+    border: 5px;
+    margin: 20px;
+}
+footer{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin-top: 170px;
+}
