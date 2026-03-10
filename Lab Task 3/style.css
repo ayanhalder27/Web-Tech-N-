@@ -1,0 +1,37 @@
+#display{
+    text-align: center;
+    margin-top: 100px;
+}
+
+#buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+button{
+    background-color: #555;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+}
+
+#display{
+    background-color: #222;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    text-align: right;
+    margin-bottom: 20px;
+    height: 80px;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+#clear{
+    background-color: red;    
+}
