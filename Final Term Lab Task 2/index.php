@@ -22,7 +22,7 @@
             echo "Error";
         }
 
-        $con->close();
+        mysqli_close($con);
     }
 
     function read(){
@@ -49,9 +49,35 @@
                         <td>".$row['EMAIL']."</td>
                         <td>".$row['REGISTRATION_NO']."</td>
                         <td>".$row['DEPARTMENT']."</td>
-                        <td><button>Update</button></td>
+                        <td><a href='index.php?edit_id=".$row['ID']."'>Edit</a></td>
+                        <td><a href='index.php?delete_id=".$row['ID']."'>Delete</a></td>
                      </tr>";
             }
+        }
+
+        mysqli_close($con);
+    }
+
+    function delete($id){
+        $server = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "test";
+
+        $con = mysqli_connect($server, $username, $password, $database);
+
+        if(!$con){
+            die("connection failed due to". mysqli_connect_error());
+
+        }
+
+        $sql = "DELETE FROM STUDENTS WHERE ID = $id;";
+
+        if($con->query($sql) == true){
+            echo "Successfully deleted";
+        }
+        else{
+            echo "Error";
         }
 
         mysqli_close($con);
@@ -60,6 +86,16 @@
     if(isset($_POST['insert'])){
         insert($_POST['name'], $_POST['email'], $_POST['registration_no'], $_POST['dept']);
     }
+
+    if(isset($_GET['delete_id'])){
+        delete($_GET['delete_id']);
+    }
+
+    if(isset($_GET['edit_id'])){
+        
+    }
+
+    
 ?>
 
 
